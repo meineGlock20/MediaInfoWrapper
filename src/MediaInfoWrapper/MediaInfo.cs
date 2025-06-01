@@ -6,6 +6,7 @@
 // ----------------------------------------------------------------------------------------------
 
 using System.Runtime.InteropServices;
+using System.Security;
 using MediaInfoWrapper.Core;
 
 namespace MediaInfoWrapper;
@@ -39,15 +40,16 @@ internal sealed class SafeMediaInfoHandle : SafeHandle
 /// <summary>
 /// Thin interop surface for loading and invoking the native MediaInfo library.
 /// </summary>
+[SuppressUnmanagedCodeSecurity]
 internal static partial class NativeMethods
 {
     // Change these constants if you ship native binaries for Linux/macOS:
 #if WINDOWS
-        public const string LibName = "MediaInfo.dll";
+    public const string LibName = "MediaInfo.dll";
 #elif LINUX
-        public const string LibName = "libmediainfo.so";
+    public const string LibName = "libmediainfo.so";
 #elif OSX
-        public const string LibName = "libmediainfo.dylib";
+    public const string LibName = "libmediainfo.dylib";
 #else
     public const string LibName = "MediaInfo.dll";
 #endif
@@ -68,10 +70,10 @@ internal static partial class NativeMethods
     public static partial IntPtr MediaInfo_Open_Buffer_Init(IntPtr handle, long fileSize, long fileOffset);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfoA_Open(IntPtr handle, long fileSize, long fileOffset);
+    public static partial IntPtr MediaInfoA_Open_Buffer_Init(IntPtr handle, long fileSize, long fileOffset);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfo_Open_Buffer_Continue(IntPtr handle, IntPtr Buffer, IntPtr Buffer_Size);
+    public static partial IntPtr MediaInfo_Open_Buffer_Continue(IntPtr handle, IntPtr buffer, IntPtr bufferSize);
 
     [LibraryImport(LibName)]
     public static partial IntPtr MediaInfoA_Open_Buffer_Continue(IntPtr handle, long fileSize, [In] byte[] buffer, IntPtr bufferSize);
@@ -185,7 +187,7 @@ public partial class MediaInfo : IDisposable
     public void Open(string fileName)
     {
         if (Handle == IntPtr.Zero)
-            throw new ObjectDisposedException(nameof(MediaInfo), "Native MediaInfo handle is invalid");
+            throw new ObjectDisposedException(nameof(MediaInfo), "Native MediaInfo handle is invalid.");
 
         int result;
         if (_mustUseAnsi)
@@ -206,7 +208,7 @@ public partial class MediaInfo : IDisposable
         }
 
         if (result == 0)
-            throw new InvalidOperationException($"MediaInfo failed to open: {fileName}");
+            throw new InvalidOperationException($"MediaInfo failed to open: {fileName}.");
     }
 
     /// <summary>
@@ -221,10 +223,10 @@ public partial class MediaInfo : IDisposable
         InfoKind kindOfSearch = InfoKind.Name)
     {
         if (Handle == IntPtr.Zero)
-            throw new ObjectDisposedException(nameof(MediaInfo), "Native MediaInfo handle is invalid");
+            throw new ObjectDisposedException(nameof(MediaInfo), "Native MediaInfo handle is invalid.");
 
         if (string.IsNullOrEmpty(parameter))
-            throw new ArgumentException("Parameter must be non-empty", nameof(parameter));
+            throw new ArgumentException("Parameter must be non-empty.", nameof(parameter));
 
         if (_mustUseAnsi)
         {
@@ -264,10 +266,10 @@ public partial class MediaInfo : IDisposable
     public string? Option(string option, string value = "")
     {
         if (Handle == IntPtr.Zero)
-            throw new ObjectDisposedException(nameof(MediaInfo), "Native MediaInfo handle is invalid");
+            throw new ObjectDisposedException(nameof(MediaInfo), "Native MediaInfo handle is invalid.");
 
         if (string.IsNullOrEmpty(option))
-            throw new ArgumentException("Option must be non-empty", nameof(option));
+            throw new ArgumentException("Option must be non-empty.", nameof(option));
 
         if (_mustUseAnsi)
         {
@@ -297,7 +299,7 @@ public partial class MediaInfo : IDisposable
     public int Count(StreamKind streamKind)
     {
         if (Handle == IntPtr.Zero)
-            throw new ObjectDisposedException(nameof(MediaInfo), "Native MediaInfo handle is invalid");
+            throw new ObjectDisposedException(nameof(MediaInfo), "Native MediaInfo handle is invalid.");
         return (int)NativeMethods.MediaInfo_Count_Get(Handle, (IntPtr)streamKind, -1);
     }
 }
