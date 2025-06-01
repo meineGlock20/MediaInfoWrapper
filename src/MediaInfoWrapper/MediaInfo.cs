@@ -56,70 +56,70 @@ internal static partial class NativeMethods
     public static partial IntPtr MediaInfo_New();
 
     [LibraryImport(LibName)]
-    public static partial void MediaInfo_Delete(IntPtr Handle);
+    public static partial void MediaInfo_Delete(IntPtr handle);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfo_Open(IntPtr Handle, [MarshalAs(UnmanagedType.LPWStr)] string FileName);
+    public static partial IntPtr MediaInfo_Open(IntPtr handle, [MarshalAs(UnmanagedType.LPWStr)] string fileName);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfoA_Open(IntPtr Handle, IntPtr FileName);
+    public static partial IntPtr MediaInfoA_Open(IntPtr handle, IntPtr fileName);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfo_Open_Buffer_Init(IntPtr Handle, long File_Size, long File_Offset);
+    public static partial IntPtr MediaInfo_Open_Buffer_Init(IntPtr handle, long fileSize, long fileOffset);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfoA_Open(IntPtr Handle, long File_Size, long File_Offset);
+    public static partial IntPtr MediaInfoA_Open(IntPtr handle, long fileSize, long fileOffset);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfo_Open_Buffer_Continue(IntPtr Handle, IntPtr Buffer, IntPtr Buffer_Size);
+    public static partial IntPtr MediaInfo_Open_Buffer_Continue(IntPtr handle, IntPtr Buffer, IntPtr Buffer_Size);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfoA_Open_Buffer_Continue(IntPtr Handle, long File_Size, [In] byte[] Buffer, IntPtr Buffer_Size);
+    public static partial IntPtr MediaInfoA_Open_Buffer_Continue(IntPtr handle, long fileSize, [In] byte[] buffer, IntPtr bufferSize);
 
     [LibraryImport(LibName)]
-    public static partial long MediaInfo_Open_Buffer_Continue_GoTo_Get(IntPtr Handle);
+    public static partial long MediaInfo_Open_Buffer_Continue_GoTo_Get(IntPtr handle);
 
     [LibraryImport(LibName)]
-    public static partial long MediaInfoA_Open_Buffer_Continue_GoTo_Get(IntPtr Handle);
+    public static partial long MediaInfoA_Open_Buffer_Continue_GoTo_Get(IntPtr handle);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfo_Open_Buffer_Finalize(IntPtr Handle);
+    public static partial IntPtr MediaInfo_Open_Buffer_Finalize(IntPtr handle);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfoA_Open_Buffer_Finalize(IntPtr Handle);
+    public static partial IntPtr MediaInfoA_Open_Buffer_Finalize(IntPtr handle);
 
     [LibraryImport(LibName)]
-    public static partial void MediaInfo_Close(IntPtr Handle);
+    public static partial void MediaInfo_Close(IntPtr handle);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfo_Inform(IntPtr Handle, IntPtr Reserved);
+    public static partial IntPtr MediaInfo_Inform(IntPtr handle, IntPtr reserved);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfoA_Inform(IntPtr Handle, IntPtr Reserved);
+    public static partial IntPtr MediaInfoA_Inform(IntPtr handle, IntPtr reserved);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfo_GetI(IntPtr Handle, IntPtr StreamKind, IntPtr StreamNumber, IntPtr Parameter, IntPtr KindOfInfo);
+    public static partial IntPtr MediaInfo_GetI(IntPtr handle, IntPtr streamKind, IntPtr streamNumber, IntPtr parameter, IntPtr kindOfInfo);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfoA_GetI(IntPtr Handle, IntPtr StreamKind, IntPtr StreamNumber, IntPtr Parameter, IntPtr KindOfInfo);
+    public static partial IntPtr MediaInfoA_GetI(IntPtr handle, IntPtr streamKind, IntPtr streamNumber, IntPtr parameter, IntPtr kindOfInfo);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfo_Get(IntPtr Handle, IntPtr StreamKind, IntPtr StreamNumber, [MarshalAs(UnmanagedType.LPWStr)] string Parameter, IntPtr KindOfInfo, IntPtr KindOfSearch);
+    public static partial IntPtr MediaInfo_Get(IntPtr handle, IntPtr streamKind, IntPtr streamNumber, [MarshalAs(UnmanagedType.LPWStr)] string parameter, IntPtr kindOfInfo, IntPtr kindOfSearch);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfoA_Get(IntPtr Handle, IntPtr StreamKind, IntPtr StreamNumber, IntPtr Parameter, IntPtr KindOfInfo, IntPtr KindOfSearch);
+    public static partial IntPtr MediaInfoA_Get(IntPtr handle, IntPtr streamKind, IntPtr streamNumber, IntPtr parameter, IntPtr kindOfInfo, IntPtr kindOfSearch);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfo_Option(IntPtr Handle, [MarshalAs(UnmanagedType.LPWStr)] string Option, [MarshalAs(UnmanagedType.LPWStr)] string Value);
+    public static partial IntPtr MediaInfo_Option(IntPtr handle, [MarshalAs(UnmanagedType.LPWStr)] string option, [MarshalAs(UnmanagedType.LPWStr)] string value);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfoA_Option(IntPtr Handle, IntPtr Option, IntPtr Value);
+    public static partial IntPtr MediaInfoA_Option(IntPtr handle, IntPtr option, IntPtr value);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfo_State_Get(IntPtr Handle);
+    public static partial IntPtr MediaInfo_State_Get(IntPtr handle);
 
     [LibraryImport(LibName)]
-    public static partial IntPtr MediaInfo_Count_Get(IntPtr Handle, IntPtr StreamKind, IntPtr StreamNumber);
+    public static partial IntPtr MediaInfo_Count_Get(IntPtr handle, IntPtr streamKind, IntPtr streamNumber);
 }
 
 /// <summary>
@@ -153,7 +153,6 @@ public partial class MediaInfo : IDisposable
         // On non‐Windows, assume ANSI entrypoints:
         _mustUseAnsi = !RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
     }
-
 
     public void Dispose()
     {
