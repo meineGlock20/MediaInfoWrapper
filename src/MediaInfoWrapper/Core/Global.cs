@@ -1,9 +1,8 @@
 // SPDX-FileCopyrightText: 2025 meineGlock20
 // SPDX-License-Identifier: MIT
 // ----------------------------------------------------------------------------------------------
-// This wrapper (MediaInfoWrapper) is MIT‐licensed. It loads the native 
-// MediaInfo library (LGPL v2.1+) at runtime; you must comply with LGPL 
-// when distributing the native binaries: Copyright (c) MediaArea.net SARL. All Rights Reserved.
+// This wrapper (MediaInfoWrapper) is MIT‐licensed.
+// This product uses MediaInfo library, Copyright (c) 2002-2025 MediaArea.net SARL.
 // ----------------------------------------------------------------------------------------------
 
 namespace MediaInfoWrapper.Core;

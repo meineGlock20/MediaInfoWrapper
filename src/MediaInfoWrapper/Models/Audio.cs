@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2025 meineGlock20
+// SPDX-License-Identifier: MIT
+// ----------------------------------------------------------------------------------------------
+// This wrapper (MediaInfoWrapper) is MIT‐licensed.
+// This product uses MediaInfo library, Copyright (c) 2002-2025 MediaArea.net SARL.
+// ----------------------------------------------------------------------------------------------
+
 namespace MediaInfoWrapper.Models;
 
 /// <summary>
