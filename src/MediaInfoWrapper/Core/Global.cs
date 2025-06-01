@@ -1,0 +1,74 @@
+// SPDX-FileCopyrightText: 2025 meineGlock20
+// SPDX-License-Identifier: MIT
+// ----------------------------------------------------------------------------------------------
+// This wrapper (MediaInfoWrapper) is MIT‐licensed. It loads the native 
+// MediaInfo library (LGPL v2.1+) at runtime; you must comply with LGPL 
+// when distributing the native binaries: Copyright (c) MediaArea.net SARL. All Rights Reserved.
+// ----------------------------------------------------------------------------------------------
+
+namespace MediaInfoWrapper.Core;
+
+/// <summary>
+/// Represents the kind of stream.
+/// </summary>
+public enum StreamKind
+{
+    General,
+    Video,
+    Audio,
+    Text,
+    Other,
+    Image,
+    Menu,
+}
+
+/// <summary>
+/// Represents the kind of information to retrieve from MediaInfo.
+/// </summary>
+public enum InfoKind
+{
+    Name,
+    Text,
+    Measure,
+    Options,
+    NameText,
+    MeasureText,
+    Info,
+    HowTo
+}
+
+/// <summary>
+/// Represents the options for retrieving information from MediaInfo.
+/// </summary>
+public enum InfoOptions
+{
+    ShowInInform,
+    Support,
+    ShowInSupported,
+    TypeOfValue
+}
+
+/// <summary>
+/// Represents the kind of search to perform when retrieving information.
+/// </summary>
+[Flags]
+public enum InfoFileOptions
+{
+    FileOption_Nothing = 0x00,
+    FileOption_NoRecursive = 0x01,
+    FileOption_CloseAll = 0x02,
+    FileOption_Max = 0x04
+};
+
+/// <summary>
+/// Represents the status of a media file.
+/// </summary>
+[Flags]
+public enum Status
+{
+    None = 0x00,
+    Accepted = 0x01,
+    Filled = 0x02,
+    Updated = 0x04,
+    Finalized = 0x08,
+}
