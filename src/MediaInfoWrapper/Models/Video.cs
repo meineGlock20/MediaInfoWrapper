@@ -13,17 +13,28 @@ namespace MediaInfoWrapper.Models;
 public sealed record Video
 {
     public string? AspectRatio { get; init; }
+    public string? AudioCodec { get; init; }
     public int? AudioChannels { get; init; }
     public int? AudioRate { get; init; }
+    public string? BitDepth { get; init; }
+    public long? BitRate { get; init; }
+    public string? Codec { get; init; }
+    public string? ColorSpace { get; init; }
     public long? Duration { get; init; }
+    public DateTimeOffset? EncodedDate { get; init; }
+    public string? FileExtension { get; init; }
     public long? FileSize { get; init; }
     public string? Format { get; init; }
+    public int? FrameCount { get; init; }
     public double? FrameRate { get; init; }
     public bool HasSubTitles { get; init; }
     public int? Height { get; init; }
+    public string? Language { get; init; }
     public string? MediaInfoVersion { get; init; }
-    public string? Codec { get; init; }
-    public long? Bitrate { get; init; }
     public string? Resolution { get; init; }
+    public string? ScanType { get; init; }
+    public string? Title { get; init; }
+    public int? VideoBitrate { get; init; }
+    public string? VideoCodec { get; init; }
     public int? Width { get; init; }
 }
