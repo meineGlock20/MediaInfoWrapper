@@ -37,4 +37,20 @@ public sealed record Video
     public int? VideoBitrate { get; init; }
     public string? VideoCodec { get; init; }
     public int? Width { get; init; }
+
+    public string? FriendlyResolution => Height.HasValue ? GetFriendlyResolution(Height.Value) : null;
+ 
+    private static readonly Func<int, string> GetFriendlyResolution = height => height switch
+    {
+        >= 180 and <= 300 => "240p",
+        >= 301 and <= 430 => "360p",
+        >= 431 and <= 600 => "480p",
+        >= 601 and <= 980 => "720p",
+        >= 981 and <= 1200 => "1080p",
+        >= 1201 and <= 2260 => "2K",
+        >= 2261 and <= 3340 => "4K",
+        >= 3341 and <= 4420 => "5K",
+        >= 4421 and <= 6580 => "8K",
+        _ => "Unknown"
+    };
 }
