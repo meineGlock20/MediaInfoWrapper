@@ -8,6 +8,29 @@
 namespace MediaInfoWrapper.Core;
 
 /// <summary>
+/// Represents the speed of parsing media information.
+/// Fast is the default and is suitable for most cases.
+/// Full is more thorough and will take longer, but provides more detailed and accurate information.
+/// </summary>
+public enum ParseSpeed
+{
+    Fast = 0,
+    Full = 1,
+}
+
+/// <summary>
+/// Represents whether the MediaInfo should return complete information.
+/// No is the default.
+/// Yes will be more verbose.
+/// This is useful for detailed analysis but may not be necessary for all use cases.
+/// </summary>
+public enum Complete
+{
+    No = 0,
+    Yes = 1,
+}   
+
+/// <summary>
 /// Represents the kind of stream.
 /// </summary>
 public enum StreamKind
