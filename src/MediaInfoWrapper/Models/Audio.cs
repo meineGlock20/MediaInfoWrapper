@@ -15,6 +15,7 @@ public sealed record Audio
     public int? BitDepth { get; init; }
     public int? Channels { get; init; }
     public string? Codec { get; init; }
+    public string? CodecID { get; init; }
     public string? CompressionMode { get; init; }
     public string? ChannelPositions { get; init; }
     public TimeSpan Duration { get; init; }
