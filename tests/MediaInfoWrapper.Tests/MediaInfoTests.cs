@@ -2,10 +2,13 @@
 using MediaInfoWrapper.Core;
 using Xunit.Abstractions;
 
+namespace MediaInfoWrapper.Tests;
+
 public class MediaInfoTests(ITestOutputHelper output)
 {
     private readonly ITestOutputHelper _output = output;
     private const string SampleVideoPath = "sample-video.mp4";
+    private const string SampleAudioPath = "sample-audio.mp4";
 
     [Fact]
     public void CanCreateInstance()
