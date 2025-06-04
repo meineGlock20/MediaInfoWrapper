@@ -42,7 +42,7 @@ public sealed record Video
     public int? Width { get; init; }
 
     public string? FriendlyResolution => Height.HasValue ? GetFriendlyResolution(Height.Value) : null;
- 
+
     private static readonly Func<int, string> GetFriendlyResolution = height => height switch
     {
         >= 180 and <= 300 => "240p",
