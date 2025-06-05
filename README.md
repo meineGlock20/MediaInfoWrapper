@@ -17,7 +17,11 @@ Extracts audio and video metadata (codec, bitrate, resolution, duration, etc.) f
 
 ## 📦 Installation
 
+[![NuGet version](https://img.shields.io/nuget/v/MeineGlock.MediaInfoWrapperDotNet.svg?label=NuGet)](https://www.nuget.org/packages/MeineGlock.MediaInfoWrapperDotNet/)
+
+```bash
 dotnet add package MeineGlock.MediaInfoWrapperDotNet --version 1.0.0
+```
 
 ## 📄 Usage
 
@@ -37,6 +41,7 @@ Console.WriteLine(videoInfo.FriendlyResolution); // e.g., 1080p
 
 ## 📜 License
 This wrapper is MIT licensed.
+[![License](https://img.shields.io/github/license/MeineGlock20/MediaInfoWrapper.svg)](https://github.com/MeineGlock20/MediaInfoWrapper/blob/main/LICENSE)
 
 This product uses MediaInfo library, Copyright (c) 2002-2025 MediaArea.net SARL.
 
