@@ -8,19 +8,20 @@
 
 		<!-- NuGet Package Metadata -->
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<PackageId>MediaInfoWrapperDotNet</PackageId>
+		<PackageId>MeineGlock.MediaInfoWrapperDotNet</PackageId>
 		<Version>1.0.0</Version>
 		<Authors>meineGlock20</Authors>
 		<Company>meineGlock20</Company>
-		<Description>
-			Cross-platform .NET 8+ wrapper for the MediaInfo native library. Extracts audio/video metadata from media files on Windows, macOS, and Linux.
+		<Description>Cross-platform .NET 8+ wrapper for the MediaInfo native library. Extracts audio/video metadata from media files on Windows, macOS, and Linux.
 		</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<RepositoryUrl>https://github.com/meineGlock20/MediaInfoWrapper</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/meineGlock20/MediaInfoWrapper</PackageProjectUrl>
-		<PackageTags>MediaInfo;metadata;audio;video;media;wrapper;cross-platform</PackageTags>
-		
-
+		<PackageTags>MediaInfo;metadata;audio;video;media;wrapper;cross-platform;dotnet;modern</PackageTags>
+		<Title>Modern .NET MediaInfo Wrapper</Title>
+		<Copyright>Copyright © 2005 meineGlock20</Copyright>
+		<PackageReleaseNotes>Initial release!</PackageReleaseNotes>
+		<PackageIcon>media-info-wrapper.png</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -36,6 +37,13 @@
 
 		<!-- Pack all native assets -->
 		<None Include="runtimes\**\*" Pack="true" PackagePath="runtimes\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="C:\Users\meine\OneDrive\Documents\Projects\MediaInfoWrapper\media-info-wrapper.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 </Project>
