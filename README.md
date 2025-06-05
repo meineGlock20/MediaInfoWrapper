@@ -41,8 +41,7 @@ Console.WriteLine(videoInfo.FriendlyResolution); // e.g., 1080p
 
 ## 📜 License
 This wrapper is MIT licensed.
-[![License](https://img.shields.io/github/license/MeineGlock20/MediaInfoWrapper.svg)](https://github.com/MeineGlock20/MediaInfoWrapper/blob/main/LICENSE)
-
+[![License](https://img.shields.io/github/license/MeineGlock20/MediaInfoWrapper.svg)](https://github.com/meineGlock20/MediaInfoWrapper/blob/main/LICENSE)
 This product uses MediaInfo library, Copyright (c) 2002-2025 MediaArea.net SARL.
 
 
