@@ -37,6 +37,7 @@ Console.WriteLine(videoInfo.FriendlyResolution); // e.g., 1080p
 
 ## 📜 License
 This wrapper is MIT licensed.
+
 This product uses MediaInfo library, Copyright (c) 2002-2025 MediaArea.net SARL.
 
 
