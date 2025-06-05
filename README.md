@@ -17,7 +17,7 @@ Extracts audio and video metadata (codec, bitrate, resolution, duration, etc.) f
 
 ## 📦 Installation
 
-Coming soon on NuGet:
+dotnet add package MeineGlock.MediaInfoWrapperDotNet --version 1.0.0
 
 ## 📄 Usage
 
