@@ -19,6 +19,11 @@ if (!File.Exists(videoFilePath))
     return;
 }
 
+Console.ForegroundColor = ConsoleColor.Yellow;
+Console.WriteLine("Retrieving video information, this could take a few minutes... Please wait.");
+Console.ResetColor();
+Console.WriteLine();
+
 // Time the operation.
 var stopwatch = System.Diagnostics.Stopwatch.StartNew();
 
@@ -32,7 +37,7 @@ mediaInfo.Open(videoFilePath);
 // You can adjust the ParseSpeed and Complete options as needed.
 // Full parsing is more comprehensive but can be very slow on large files, while fast parsing is quicker but may miss some details.
 // Try using `ParseSpeed.Fast` but if you find that some information is missing, you can switch to `ParseSpeed.Full` for a more thorough analysis.
-var videoInfo = VideoInfo.GetVideoInfo(videoFilePath, ParseSpeed.Full, Complete.Yes);
+var videoInfo = VideoInfo.GetVideoInfo(videoFilePath, ParseSpeed.Fast, Complete.Yes);
 
 // Display video information.
 Console.WriteLine("== Video Information ==");
