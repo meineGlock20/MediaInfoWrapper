@@ -1,16 +1,41 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
-  <ItemGroup>
-    <None Update="MediaInfo.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+		<!-- NuGet Package Metadata -->
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageId>MediaInfoWrapperDotNet</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>meineGlock20</Authors>
+		<Company>meineGlock20</Company>
+		<Description>
+			Cross-platform .NET 8+ wrapper for the MediaInfo native library. Extracts audio/video metadata from media files on Windows, macOS, and Linux.
+		</Description>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/meineGlock20/MediaInfoWrapper</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/meineGlock20/MediaInfoWrapper</PackageProjectUrl>
+		<PackageTags>MediaInfo;metadata;audio;video;media;wrapper;cross-platform</PackageTags>
+		
+
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Update="runtimes\linux-x64\native\libmediainfo.so">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="runtimes\osx-x64\native\libmediainfo.dylib">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="runtimes\win-x64\native\MediaInfo.dll">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+
+		<!-- Pack all native assets -->
+		<None Include="runtimes\**\*" Pack="true" PackagePath="runtimes\" />
+	</ItemGroup>
 
 </Project>
