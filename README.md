@@ -20,7 +20,7 @@ Extracts audio and video metadata (codec, bitrate, resolution, duration, etc.) f
 [![NuGet version](https://img.shields.io/nuget/v/MeineGlock.MediaInfoWrapperDotNet.svg?label=NuGet)](https://www.nuget.org/packages/MeineGlock.MediaInfoWrapperDotNet/)
 
 ```bash
-dotnet add package MeineGlock.MediaInfoWrapperDotNet --version 1.0.0
+dotnet add package MeineGlock.MediaInfoWrapperDotNet --version 1.0.1
 ```
 
 ## 📄 Usage
