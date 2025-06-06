@@ -7,7 +7,7 @@ Extracts audio and video metadata (codec, bitrate, resolution, duration, etc.) f
 
 ## ✨ Features
 
-- 🎥 Extracts media metadata (codec, bitrate, resolution, etc.)
+- 🎥 Extracts audio and video media metadata (codec, bitrate, resolution, etc.)
 - 🖥️ Cross-platform support: Windows, macOS, and Linux
 - 🔁 Thin and focused wrapper around native MediaInfo
 - ⚡ Fast parsing options (`ParseSpeed.Fast`, `Complete.No`)
