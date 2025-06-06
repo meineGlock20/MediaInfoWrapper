@@ -14,13 +14,21 @@
 		<Company>meineGlock20</Company>
 		<Description>Cross-platform .NET 8+ wrapper for the MediaInfo native library. Extracts audio/video metadata from media files on Windows, macOS, and Linux.
 		</Description>
+		<PackageReleaseNotes>
+			v1.0.1 2025-06-05
+			- Improved internal documentation
+			v1.0.0 2025-06-05
+			- Initial release! 🎉 
+			- Easy-to-use API for audio/video metadata extraction
+			- Supports .NET 8+ and modern C# features
+			- Windows, Linux, macOS native runtime support
+		</PackageReleaseNotes>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<RepositoryUrl>https://github.com/meineGlock20/MediaInfoWrapper</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/meineGlock20/MediaInfoWrapper</PackageProjectUrl>
 		<PackageTags>MediaInfo;metadata;audio;video;media;wrapper;cross-platform;dotnet;modern</PackageTags>
 		<Title>Modern .NET MediaInfo Wrapper</Title>
 		<Copyright>Copyright © 2005 meineGlock20</Copyright>
-		<PackageReleaseNotes>Initial release!</PackageReleaseNotes>
 		<PackageIcon>media-info-wrapper.png</PackageIcon>
 	</PropertyGroup>
 
