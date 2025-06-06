@@ -5,7 +5,9 @@ layout: default
 
 # MeineGlock.MediaInfoWrapper
 
-Welcome to the documentation for the **MeineGlock.MediaInfoWrapper** NuGet package!
+Welcome to the documentation for the **MeineGlock.MediaInfoWrapperDotNet** NuGet package!
+
+A modern wrapper for .NET 8+
 
 ## ✨ Features
 
