@@ -1,0 +1,34 @@
+name: GitHub Release         # The name shown in the Actions tab
+
+on:
+  push:
+    tags:
+      - 'v*'                 # Only runs when you push a tag like `v1.0.0`
+
+permissions:
+  contents: write            # Allows the workflow to create a release
+
+jobs:
+  release:                   # The name of the job
+    runs-on: ubuntu-latest   # GitHub will run this job on an Ubuntu runner
+
+    steps:
+      - uses: actions/checkout@v4       # Clones your repo so we can read files
+
+      - name: Extract release notes     # Reads CHANGELOG.md to grab the right version section
+        id: extract_notes
+        run: |
+          VERSION="${GITHUB_REF#refs/tags/}"
+          RELEASE_NOTES=$(awk "/^##? \\[?$VERSION\\]?/ {flag=1; next} /^##? / {flag=0} flag" CHANGELOG.md)
+          echo "release_notes<<EOF" >> $GITHUB_OUTPUT
+          echo "$RELEASE_NOTES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release     # Actually makes the release on GitHub
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          body: ${{ steps.extract_notes.outputs.release_notes }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
