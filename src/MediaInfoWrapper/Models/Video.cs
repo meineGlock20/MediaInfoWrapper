@@ -41,6 +41,8 @@ public sealed record Video
     public string? VideoCodec { get; init; }
     public int? Width { get; init; }
 
+    public List<Audio>? AudioStreams { get; init; } = [];
+
     public string? FriendlyResolution => Height.HasValue ? GetFriendlyResolution(Height.Value) : null;
 
     private static readonly Func<int, string> GetFriendlyResolution = height => height switch
