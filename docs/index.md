@@ -21,3 +21,4 @@ A modern wrapper for .NET 8+
 
 ```bash
 dotnet add package MeineGlock.MediaInfoWrapperDotNet --version 1.0.1
+```
